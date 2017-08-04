@@ -4,7 +4,7 @@ class Api::V1::UrlsController < ApiController
     if @url.save
       render json: @url, status: :created
     else
-      render json: @url.errors, status: :unprocessible_entity
+      render json: @url.errors, status: :unprocessable_entity
     end
   end
 
