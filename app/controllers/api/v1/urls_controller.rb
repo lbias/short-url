@@ -1,4 +1,9 @@
 class Api::V1::UrlsController < ApiController
+  def index
+    @urls = current_user.urls.all
+    render json: @urls, status: :ok
+  end
+
   def create
     @url = current_user.urls.new(url_params)
     if @url.save

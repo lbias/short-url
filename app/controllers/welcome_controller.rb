@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-  end  
+    @urls = current_user.urls
+  end
 end
