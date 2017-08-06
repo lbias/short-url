@@ -1,7 +1,9 @@
 class Url < ApplicationRecord
   has_many :url_relationships
   has_many :users, through: :url_relationships, source: :user
+  has_many :logs, counter_cache: true
   belongs_to :user
+
 
   validates :original_url, presence: true, format: { :with => /\A(http|https)\:\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix }
   validates :original_url, uniqueness: true
