@@ -3,7 +3,6 @@ class Url < ApplicationRecord
   has_many :users, through: :url_relationships, source: :user
   belongs_to :user
 
-  validates :short_url,    presence: true
   validates :original_url, presence: true, format: { :with => /\A(http|https)\:\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix }
   validates :original_url, uniqueness: true
   before_validation :set_short_url
