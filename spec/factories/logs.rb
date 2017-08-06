@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :log do
-    referer "MyString"
-    ip "MyString"
+    referer FFaker::Internet.http_url
+    ip '127.0.0.0'
     user_agent "MyString"
-    url nil    
+    association :url
   end
 end

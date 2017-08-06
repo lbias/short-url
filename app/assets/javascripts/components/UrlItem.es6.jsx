@@ -1,6 +1,5 @@
 class UrlItem extends React.Component {
   render() {
-    let url = this.props
     return(
       <tr>
         <td>{this.props.index}</td>
