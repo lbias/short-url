@@ -7,4 +7,6 @@ Rails.application.routes.draw do
       resources :urls
     end
   end
+
+  get '/:id' => 'urls#show'
 end

@@ -5,7 +5,7 @@ class UrlItem extends React.Component {
       <tr>
         <td>{this.props.index}</td>
         <td>
-          {this.props.url.short_link}
+          <a href={this.props.url.short_link} target='_blank'>{this.props.url.short_link}</a>
         </td>
         <td>
           {this.props.url.original_url}
