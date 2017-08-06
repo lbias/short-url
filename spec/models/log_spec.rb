@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe Log, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe Log, 'Associations', type: :model do
+  it { is_expected.to belong_to(:url).counter_cache(:true) }
 end

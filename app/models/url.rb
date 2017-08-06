@@ -1,7 +1,7 @@
 class Url < ApplicationRecord
   has_many :url_relationships
   has_many :users, through: :url_relationships, source: :user
-  has_many :logs, counter_cache: true
+  has_many :logs
   belongs_to :user
 
 
